@@ -15,6 +15,17 @@ module.exports = function(req, res, next) {
     return next();
   }
 
+  var session = req.session;
+
+
+    var isAuthenticated = (typeof session.passport != 'undefined' 
+        && typeof session.passport.user != 'undefined' 
+        && session.passport.user != '');
+
+  if(isAuthenticated){
+  	return next();
+  }
+
   // User is not allowed
   // (default res.forbidden() behavior can be overridden in `config/403.js`)
   return res.forbidden('You are not permitted to perform this action.');

@@ -49,13 +49,10 @@ module.exports.policies = {
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
 
-'*': ['passport', 'sessionAuth'],
+'*': ['passport', 'bearerAuth', 'sessionAuth'],
  
  'auth': {
     '*': ['passport']
   }
 
-
-
-  
 };

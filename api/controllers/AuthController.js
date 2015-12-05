@@ -170,7 +170,30 @@ var AuthController = {
         
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
-        res.redirect('/');
+        //res.redirect('/');
+         // Upon successful login, send the user accessToken
+        Passport.findOne({
+            protocol : 'local',
+            user     : user.id
+        }, function (err, passport) {
+            if (passport) {
+                res.json({
+                    'user': user,
+                    'accessToken':passport.accessToken
+                });
+            }
+            else {
+                req.wantsJSON  = true;
+                return res.badRequest({
+                  code:'400',
+                  message: 'Bad Request'
+                });
+            }
+        });
+
+
+
+
       });
     });
   },

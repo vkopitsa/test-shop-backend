@@ -14,6 +14,16 @@
 
 module.exports = function (req, res, next) {
 
-  return passport.authenticate('bearer', { session: false })(req, res, next);
+
+var session = req.session;
+    var isAuthenticated = (typeof session.passport != 'undefined' 
+        && typeof session.passport.user != 'undefined' 
+        && session.passport.user != '');
+
+  if(isAuthenticated){
+  	return next();
+  }
+
+  return passport.authenticate('bearer', { session: true })(req, res, next);
   
 };

@@ -47,6 +47,13 @@ module.exports.routes = {
 'get /auth/:provider/callback': 'AuthController.callback',
 'get /auth/:provider/:action': 'AuthController.callback',
 
+  // Goods CRUD 
+  'post /goods': 'GoodsController.create',
+  'get /goods/:id?': 'GoodsController.find',
+  'put /goods/:id?': 'GoodsController.update',
+  'delete /goods/:id?': 'GoodsController.destroy',
+
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
