@@ -31,12 +31,17 @@ var AuthController = {
    * @param {Object} res
    */
   login: function (req, res) {
+
+    if(req.session.authenticated){
+      return res.redirect('/');
+    }
+
     var strategies = sails.config.passport
       , providers  = {};
 
     // Get a list of available providers for use in your templates.
     Object.keys(strategies).forEach(function (key) {
-      if (key === 'local') {
+      if (key === 'local' || key === 'bearer') {
         return;
       }
 
@@ -92,6 +97,11 @@ var AuthController = {
    * @param {Object} res
    */
   register: function (req, res) {
+
+    if(req.session.authenticated){
+      return res.redirect('/');
+    }
+
     res.view({
       errors: req.flash('error')
     });

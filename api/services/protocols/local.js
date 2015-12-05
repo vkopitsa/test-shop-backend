@@ -60,7 +60,11 @@ exports.register = function (req, res, next) {
     }
 
     // Generating accessToken for API authentication
-    var token = crypto.randomBytes(48).toString('base64');
+    //var token = crypto.randomBytes(48).toString('base64');
+    var token = crypto.randomBytes(Math.ceil(48/2))
+        .toString('hex') // convert to hexadecimal format
+        .slice(0,48);   // return required number of characters
+    
 
     Passport.create({
       protocol    : 'local'

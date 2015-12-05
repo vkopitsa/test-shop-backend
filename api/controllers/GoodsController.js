@@ -40,6 +40,8 @@ module.exports = {
         criteria = _.merge({}, req.params.all(), req.body);
 
         var id = req.param('id');
+            id = parseInt(id);
+
 
         if (!id) {
             return res.badRequest({
@@ -75,6 +77,8 @@ module.exports = {
    */
   destroy: function (req, res) {
    var id = req.param('id');
+       id = parseInt(id);
+
    req.wantsJSON  = true;
 
         if (!id) {
@@ -118,6 +122,8 @@ module.exports = {
   find: function (req, res) {
   	req.wantsJSON  = true;
     var id = req.param('id');
+        id = parseInt(id);
+
 
   var idShortCut = isShortcut(id);
 
@@ -161,8 +167,6 @@ module.exports = {
                   sort: req.param('sort') || {createdAt: 'desc'},
                   where: where || {}
           };
-
-          console.log("This is the options", options);
               
       Goods.find(options, function(err, goods) {
 

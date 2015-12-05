@@ -1,0 +1,24 @@
+<div class="table-responsive"> 
+	<table class="table table-bordered"> 
+		<thead> 
+			<tr> 
+				<th>#</th> 
+				<th>Name</th> 
+				<th>Price</th> 
+				<th>Available</th> 
+			</tr> 
+		</thead>
+		<tbody> 
+		<% if (goods) {%>
+			<% goods.forEach(function (item) { %>
+			<tr>
+				<th scope="row"><a href="/items/<%= item.id %>"><%= item.id %></a></th> 
+				<td><a href="/items/<%= item.id %>"><%= item.name %></a></td> 
+				<td><%= item.price %></td> 
+				<td><%= item.count %></td> 
+			</tr>   
+			<% }) %>
+		<% } %>
+		</tbody> 
+	</table> 
+</div>

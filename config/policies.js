@@ -53,6 +53,8 @@ module.exports.policies = {
  
  'auth': {
     '*': ['passport']
-  }
+  },
+
+  'shop': ['passport'],
 
 };

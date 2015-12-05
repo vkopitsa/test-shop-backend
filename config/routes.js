@@ -32,10 +32,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
-
 'get /login': 'AuthController.login',
 'get /logout': 'AuthController.logout',
 'get /register': 'AuthController.register',
@@ -52,6 +48,12 @@ module.exports.routes = {
   'get /goods/:id?': 'GoodsController.find',
   'put /goods/:id?': 'GoodsController.update',
   'delete /goods/:id?': 'GoodsController.destroy',
+
+  // fron-end page
+  '/': 'ShopController.find',
+  '/items/:id?': 'ShopController.find',
+
+  '/setting': 'ShopController.setting'
 
 
   /***************************************************************************
