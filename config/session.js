@@ -12,6 +12,8 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.session.html
  */
 
+var MySQLSessionStore = require('express-mysql-session');
+
 module.exports.session = {
 
   /***************************************************************************
@@ -87,5 +89,16 @@ module.exports.session = {
   // auto_reconnect: false,
   // ssl: false,
   // stringify: true
+
+   store: new MySQLSessionStore({
+        host: '192.168.99.100',
+        port: 3306,
+        user: 'root',
+        password: '1',
+        database: 'shop-test'
+    }),
+
+    key:'sid'
+
 
 };
