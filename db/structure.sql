@@ -29,6 +29,7 @@ CREATE TABLE `goods` (
   `name` varchar(255) DEFAULT NULL,
   `price` float DEFAULT NULL,
   `count` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,

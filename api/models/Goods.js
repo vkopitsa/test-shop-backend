@@ -25,7 +25,11 @@ module.exports = {
 			type: 'integer',
 			defaultsTo: '0',
 			required: true
-		}
+		},
+
+		image: {
+	    		type: 'string'
+	  	},
   	}
 };
 

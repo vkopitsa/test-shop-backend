@@ -164,7 +164,7 @@ module.exports = {
       var options = {
                   limit: req.param('limit') || 10, 
                   skip: req.param('skip')  || 1,
-                  sort: req.param('sort') || {createdAt: 'desc'},
+                  sort: req.param('sort') || {name: 'ASC'},
                   where: where || {}
           };
               

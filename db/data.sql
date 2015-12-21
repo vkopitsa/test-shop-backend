@@ -26,18 +26,19 @@
 LOCK TABLES `goods` WRITE;
 /*!40000 ALTER TABLE `goods` DISABLE KEYS */;
 
-INSERT INTO `goods` (`name`, `price`, `count`, `id`, `createdAt`, `updatedAt`)
+INSERT INTO `goods` (`name`, `price`, `count`, `image`, `id`, `createdAt`, `updatedAt`)
 VALUES
-	('Apple iPod touch 5 32Gb',8888,5,3,NULL,NULL),
-	('Samsung Galaxy S Duos S7562',7230,2,4,NULL,NULL),
-	('Canon EOS 600D Kit',4,4,5,NULL,NULL),
-	('Samsung Galaxy Tab 2 10.1 P5100 16Gb',13290,9,6,NULL,NULL),
-	('PocketBook Touch',5197,2,7,NULL,NULL),
-	('Samsung Galaxy Note II 16Gb',17049.5,2,8,NULL,NULL),
-	('Nikon D3100 Kit',12190,4,9,NULL,NULL),
-	('Canon EOS 1100D Kit',10985,2,10,NULL,NULL),
-	('Sony Xperia acro S',11801,1,11,NULL,NULL),
-	('Lenovo G580',8922,1,12,NULL,NULL);
+	('Apple iPod touch 5 32Gb', 8888, 5, '622_03.jpg', 3, NULL, NULL),
+	('Samsung Galaxy S Duos S7562', 7230, 2, '8404475.jpg', 4, NULL, NULL),
+	('Canon EOS 600D Kit', 4, 4, '19172655f024bb.jpg', 5, NULL, NULL),
+	('Samsung Galaxy Tab 2 10.1 P5100 16Gb', 13290, 9, '30016254b.jpg', 6, NULL, NULL),
+	('PocketBook Touch', 5197, 2, 'd3100_1-original.jpg', 7, NULL, NULL),
+	('Samsung Galaxy Note II 16Gb', 17049.5, 2, 'er_photo_180535.jpg', 8, NULL, NULL),
+	('Nikon D3100 Kit', 12190, 4, 'f14951bg1.jpg', 9, NULL, NULL),
+	('Canon EOS 1100D Kit', 10985, 2, 'Samsung Galaxy S Duos S7562 White-3.jpg', 10, NULL, NULL),
+	('Sony Xperia acro S', 11801, 1, 'sony-xperia-acro-s-2.jpg', 11, NULL, NULL),
+	('Lenovo G580', 8922, 1, '19172655f024bb.jpg', 12, NULL, NULL);
+
 
 /*!40000 ALTER TABLE `goods` ENABLE KEYS */;
 UNLOCK TABLES;
